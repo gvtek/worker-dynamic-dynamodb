@@ -54,7 +54,8 @@ ENV SNS_MESSAGE_TYPES "scale-up,scale-down,high-throughput-alarm,low-throughput-
 
 RUN apt-get update && apt-get install -y python-pip
 
-RUN sudo pip install awscli dynamic-dynamodb
+RUN sudo pip install awscli dynamic-dynamodb && \
+    sudo pip install --upgrade botocore boto3
 
 ADD etc/confd /etc/confd
 
